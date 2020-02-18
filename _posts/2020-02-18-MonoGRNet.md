@@ -5,9 +5,6 @@ date:   2019-03-23 21:03:36 +0530
 categories: PaperReading ObjectDetection Vision
 ---
 
-
-# MonoGRNet: A Geometric Reasoning Network for Monocular 3D Object Localization
-
 分享一篇多任务的3D目标检测模型。文章主要提出了一种端到端的多任务网络，在 KITTI 数据集上完成目标检测任务，同时对各个目标预测其 3D BoundingBox、深度等。模型的三维检测只需输入一张单目图像即可完成。
 
 **MonoGRNet: A Geometric Reasoning Network for Monocular 3D Object Localization**: [PDF](https://arxiv.org/abs/1811.10247)
