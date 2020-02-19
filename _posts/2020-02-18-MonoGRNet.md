@@ -68,6 +68,7 @@ ROI Align 可参考：[RoIPooling、RoIAlign笔记](https://www.cnblogs.com/wang
 
 $$L_{conf} = CE_{g\in G}(softmax(P_{obj}^{g}), \widetilde{P}_{obj}^{g})
 $$
+
 $$L_{bbox} = \sum_{g}1_{g}^{obj} * d(B_{2d}^{g}, d(\widetilde{B}_{2d}^{g})$$
 
 $$L_{2d} = L_{conf} + \omega L_{bbox}$$
@@ -81,6 +82,7 @@ $$L_{2d} = L_{conf} + \omega L_{bbox}$$
 #### 实例测距 Loss
 
 $$L_{zc} = \sum_{g} 1_{g}^{obj} * d(Z_{cc}^{g}, \widetilde{Z}_{c}^{g}) $$
+
 $$L_{\delta c} = \sum_{g} 1_{g}^{obj} * d(Z_{cc}^{g}+\delta _{Z_{c}}^{g}, \widetilde{Z}_{c}^{g}) $$
 
 $$L_{depth} = \alpha L_{zc} + L_{z\delta}$$
@@ -90,6 +92,7 @@ $$L_{depth} = \alpha L_{zc} + L_{z\delta}$$
 #### 目标三维坐标 Loss
 
 $$L_{c}^{2d} = \sum_{g} 1_{g}^{obj} * d(g + \delta _{c}^{g}, \widetilde{c}^{g})$$
+
 $$L_{c}^{3d} = \sum_{g} 1_{g}^{obj} * d(C_{s}^{g} + \delta _{C}^{g}, \widetilde{C}^{g})$$
 
 $$L_{location} = \beta L_{c}^{2d} + L_{c}^{3d}$$
