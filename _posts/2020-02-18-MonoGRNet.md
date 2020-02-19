@@ -5,6 +5,7 @@ date:   2019-03-23 21:03:36 +0530
 categories: PaperReading 
 tags: [ObjectDetection, Vision]
 comments: true
+toc: true
 ---
 
 分享一篇多任务的3D目标检测模型。文章主要提出了一种端到端的多任务网络，在 KITTI 数据集上完成目标检测任务，同时对各个目标预测其 3D BoundingBox、深度等。模型的三维检测只需输入一张单目图像即可完成。
@@ -25,7 +26,7 @@ Demo视频：[Demo](https://cloud.tsinghua.edu.cn/f/194ddabfd05d4dc78b9f/)
 
 ## 模型结构
 
-![](https://note.youdao.com/yws/public/resource/e9583a079e676f597aa824ca1db3b39a/xmlnote/WEBRESOURCEdb3f3eba0551146192ec429ca06dd6dd/198)
+![](https://note.youdao.com/yws/public/resource/e1f9e977c6f457d1baa77d5b7155e232/xmlnote/WEBRESOURCE06778748192d3bc09a7f9f9172de524c/769)
 
 MonoGRNet的的模型包含四个主要的组成部分
 * 传统的2D检测 (棕色)
@@ -33,7 +34,7 @@ MonoGRNet的的模型包含四个主要的组成部分
 * 目标中心点坐标预测 (蓝色)
 * 3D BoundingBox 角点预测 (黄色).
   
-#### 模型流程
+### 模型流程
 
 根据流程图，模型进行预测的流程为：
 1. 首先完成基本的2D目标检测；
@@ -46,11 +47,11 @@ MonoGRNet的的模型包含四个主要的组成部分
 
 对于3D的目标检测任务，一个目标的3D信息检测可以定义为对以下参数的预测：
 
-$$B_{3d}=(B_{2d}, Z_c, \bm{c}, O)$$
+$$B_{3d}=(B_{2d}, Z_c, c, O)$$
 
 * $B_{2d}$: 目标的 2D BBox
 * $Z_c$: 目标的深度
-* $\bm{c}$: 目标三维中心点坐标在二维图像上的投影
+* $c$: 目标三维中心点坐标在二维图像上的投影
 * $O$: 基于局部特征进行预测的角点偏移
 
 因此，对于文章所提出模型将 3D 目标检测任务分解为4项对应各参数的子任务，并整合在同一网络中进行运算。
@@ -115,7 +116,7 @@ $$L_{joint} = \sum_{g} \sum_{k} 1_{g}^{obj} * d(O_{k}^{cam}, \widetilde{O}_{k}^{
 
 在速度和精度上都有较好的表现。
 
-#### 示例
+### 示例
 
 ![](https://note.youdao.com/yws/public/resource/e1f9e977c6f457d1baa77d5b7155e232/xmlnote/WEBRESOURCEc39e37b81f900156304ba0b738daf1da/766)
 
