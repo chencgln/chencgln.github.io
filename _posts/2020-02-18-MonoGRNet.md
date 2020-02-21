@@ -3,7 +3,7 @@ layout: post
 title:  "MonoGRNet: A Geometric Reasoning Network for Monocular 3D Object Localization"
 date:   2020-02-10 21:03:36 +0530
 categories: PaperReading 
-tags: [ObjectDetection, Vision]
+tags: [Object Detection, Vision]
 comments: true
 toc: true
 ---
@@ -52,7 +52,7 @@ $$B_{3d}=(B_{2d}, Z_c, c, O)$$
 * $B_{2d}$: 目标的 2D BBox
 * $Z_c$: 目标的深度
 * $c$: 目标三维中心点坐标在二维图像上的投影
-* $O$: 基于局部特征进行预测的角点偏移
+* $O$: 基于局部特征进行预测的角点偏移量
 
 因此，对于文章所提出模型将 3D 目标检测任务分解为4项对应各参数的子任务，并整合在同一网络中进行运算。
 
