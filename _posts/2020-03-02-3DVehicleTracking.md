@@ -8,9 +8,11 @@ comments: true
 toc: true
 ---
 
-此篇论文提出的一种基于图像的3D目标检测方法，能够在时序上匹配检测的车辆实例，完成目标的检测和跟踪，并同时还原目标的完整3D BBox。
+此篇论文提出的一种基于图像的3D目标检测方法，能够在时序上匹配检测的车辆实例，完成目标的检测和跟踪。
 
 模型根据检测到的目标，利用世界坐标和相机坐标对目标进行帧间关联。对于跟踪，算法使用了 occlusion-aware 和 深度信息得到较好的跟踪效果。最后，获取目标的移动信息并利用 LSTM 完成目标的运动轨迹预测。
+
+为得到更多更丰富的训练数据，模型使用了 synthetic 的数据集（GTA5）对模型进行训练。
 
 因此，整体算法流程可以归纳为两部分，
 
@@ -53,15 +55,12 @@ toc: true
 
  #### Data Association and Tracking
 
- 目标跟踪的匹配准则：
+ 目标跟踪的匹配准则主要两点：
 
+ * 已跟踪的目标和当前检测目标之间 BBox 的相交情况。其中当前的跟踪目标会根据预测的速度信息更新其当前的位置。
+ * 已跟踪的目标和当前检测目标的表面深度特征的匹配情况。
 
- overlap between projections of current trajectories forward
-in time and bounding boxes candidates; Each trajectory is projected forward in time using the estimated velocity of an object and camera
-ego-motion. Here, we assume that ego-motion is given by a
-sensor, like GPS, an accelerometer, gyro and/or IMU.
-
-the similarity of the deep representation of the appearances of new and existing object detections
+在跟踪目标并更新状态的策略上，算法同时会过滤一定距离范围外的目标，同时将目标遮挡情况作为状态变化的一项参考因素。
 
 
 当前帧的检测目标 $s_{a}$ 与已有跟踪目标 $\tau_{a}$ 的关联性由矩阵 $A(\tau_{a}, s_{a})$ 表示，用于衡量目标特征与位置的相关程度：
@@ -79,32 +78,12 @@ $$A(\tau_{a}, s_{a})=\omega_{deep}A_{deep}+\omega_{2D}A_{2D}+\omega_{3D}A_{3d}$$
 
 其中，$A_{deep}(\tau_{a}, s_{a})$是关于表面特征的相关程度，$A_{2D}$ 和 $A_{3D}$ 分别是 2D、3D BBox 在图像上的IOU。
 
-
-
-* Depth-Ordering Matching
-
-* Occlusion-aware Data Association
-
 ### 运动状态预测
 
+模型使用了两个 LSTM 模型来保证目标运动状态预测的稳定和连续。
 
-To exploit the tem-
-poral consistency of certain vehicles, we associate the information across frames by using two LSTMs. We embed a
-3D location P to a 64-dim location feature and use 128-dim
-hidden state LSTMs to keep track of a 3D location from the
-64-dim output feature.
-
-Prediction LSTM (P-LSTM) models dynamic object lo-
-cation in 3D coordinates by predicting object velocity from
-previously updated velocities Ṗ T −n:T −1 and the current pos-
-sible location P̃ T . We use previous n = 5 frames of vehicle
-velocity to model object motion and acceleration from the
-trajectory. Given the current expected location of the object
-from 3D estimation module, the Updating LSTM (U-LSTM)
-considers both current P̂ T and previously predicted location
-P̃ T −1 to update the location and velocity (Figure 2(c)).
-
-The LSTM motion estimator updates the velocity and states of each object independent of camera movement or interactions with other objects.
+* Prediction LSTM (P-LSTM)，根据先前预测的目标速度，对目标的三维坐标进行更新；
+* Updating LSTM (U-LSTM)，根据 P-LSTM 预测的目标当前帧位置，进一步更新目标速度和当前位置。
 
 
 ## 实验和结果
@@ -114,8 +93,6 @@ The LSTM motion estimator updates the velocity and states of each object indepen
 ![](https://note.youdao.com/yws/public/resource/b448f97098a0c7699cad971aeb63da30/xmlnote/WEBRESOURCE2a24587175f87618e3947ce49f02c913/1023)
 
 ### 示例
-
-
 
 ![](https://note.youdao.com/yws/public/resource/b448f97098a0c7699cad971aeb63da30/xmlnote/WEBRESOURCEddd1cbc8b4425339c9e10e4023168cc8/1018)
 
