@@ -81,10 +81,6 @@ $$
 * 基于目标高度的先验信息，计算的到目标的深度信息
 * 利用单目深度图得到的鸟瞰图，用深度特征对3D BBox的结果进行调优
 
-* 2D structured polygons are generated with a stacked hourglass network. 
-* (Middle row) Object depth stage utilizes 3D object height as a prior to recover the missing depth of the object. 
-* (Bottom row) 3D box refine stage rectifies coarse 3D boxes using bird’s eye view features in 3D-ROIs. Best viewed in color.
-
 ### 目标对应多边形预测
 
 首先，利用模型使用了 Faster-RCNN 完成常规的2D目标检测任务。然后，利用各目标在图像上的对应特征，对其3D BBox顶点的投影进行预测。考虑到3D BBox的顶点在图像上往往对应的并非目标本身的特征，以下图最右图像为例，顶点的投影会落在地面或者墙上：
