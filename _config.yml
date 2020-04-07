@@ -14,7 +14,7 @@ description: A Visioner
 #
 
 # 你的博客logo图片URL，建议尺寸不超过300px × 300px
-avatar: images/profile.jpg
+avatar: https://chencgln.github.io/images/profile.jpg
 
 # 你的favicon（出现在浏览器tab上）图片URL，建议使用较小(64px × 64px)的图片
 favicon: images/favicon.png
@@ -45,7 +45,7 @@ footer-links:
   email: chencglt@gmail.com 
   facebook: #https://www.facebook.com/<>
   flickr: #https://www.flickr.com/<>
-  github: https://github.com/chencgln #https://github.com/<>
+  github: chencgln #https://github.com/<>
   instagram: #https://instagram.com/<>
   linkedin: #https://www.linkedin.com/in/<>
   pinterest: #https://www.pinterest.com/<>
