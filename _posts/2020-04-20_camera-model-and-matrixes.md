@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "相机成像模型、内外参矩阵和坐标变换
-"
-date:   2020-04-20 18:00
+title:  相机成像模型、内外参矩阵和坐标变换
+date:   2020-04-20 
 categories: 计算机视觉 
 tags: [图像基础, 相机坐标]
 comments: true
