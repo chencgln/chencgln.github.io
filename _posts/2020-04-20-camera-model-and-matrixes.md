@@ -20,7 +20,7 @@ toc: true
 
 2
 
-<img algin="center" src=https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png />
+<center><img src=https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png width=50 height=40 /></center>
 
 ![](https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png?s=40)
 
