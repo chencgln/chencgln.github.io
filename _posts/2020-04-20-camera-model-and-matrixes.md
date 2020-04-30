@@ -19,6 +19,7 @@ toc: true
 
 </div>
 
+![](https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png){ width=20% } 
 
 <img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" width=50 height=40 />
 
