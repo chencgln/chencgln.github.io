@@ -8,17 +8,13 @@ comments: true
 toc: true
 ---
 
+<!-- <link rel="stylesheet" type="style.scss" media="all" href="URL" /> -->
+
 ## 针孔相机模型
 
 针孔相机的成像模型可以表示为：
 
-<p align=center>
-
-<img src=https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png width=50 height=40 />
-
-</p>
-
-2
+<p align=center><img src=https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png width=50 height=40 /></p>
 
 
 ||
