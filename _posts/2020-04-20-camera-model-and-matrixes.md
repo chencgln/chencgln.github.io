@@ -13,8 +13,10 @@ toc: true
 针孔相机的成像模型可以表示为：
 
 
-<div align=center>
+<div style="text-align:center">
+
 <img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" width=50 height=40 />
+
 </div>
 
 ![](https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png){ width=20% } 
@@ -30,7 +32,7 @@ test
 </div>
 
 
-<div style="text-align:center">
+<div >
 
 test
 
