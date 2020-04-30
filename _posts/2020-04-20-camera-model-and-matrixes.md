@@ -13,17 +13,21 @@ toc: true
 针孔相机的成像模型可以表示为：
 
 
-<div style="text-align: center">
+<div align=center>
 
-<img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" width=40% />
+<img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" width=50 height=40 />
 
 </div>
+
+<img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" style="width:50px;height:50px"/>
 
 相机原点为光心，利用小孔成像原理，将在焦平面上得到场景的倒影。为了减少坐标变换的的麻烦，可在相机前方距离 $f$ 处定义一个像平面，表示相机获取的场景图像。因此，相机光心与实际世界坐标系下某一点 $(x, y, z)$ 的连线，与像平面的交点，即最终该点对应图像上的位置。
 
 
-<div style="text-align: center">
-<img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004517.png")/></div>
+<div align=center>
+<img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004517.png")/>
+
+</div>
 
 于是对于世界坐标系下任一点，其在图像上的坐标变换过程如下图：
 
