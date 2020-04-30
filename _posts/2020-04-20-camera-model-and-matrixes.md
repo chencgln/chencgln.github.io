@@ -14,9 +14,7 @@ toc: true
 
 
 <div align=center>
-
 <img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" width=50 height=40 />
-
 </div>
 
 ![](https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png){ width=20% } 
@@ -25,7 +23,14 @@ toc: true
 
 <img src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png"  style="width:50px;height:50px" />
 
-<div>
+<div align=center>
+
+test
+
+</div>
+
+
+<div style="text-align:center">
 
 test
 
