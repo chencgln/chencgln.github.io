@@ -14,14 +14,6 @@ toc: true
 
 针孔相机的成像模型可以表示为：
 
-<img algin=center src="https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png" width=50 height=40 /></p>
-
-
-||
-|:-:|
-|<img src=https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png width=50 height=40 />| 
-
-
 
 ![](https://glimg.oss-cn-shanghai.aliyuncs.com/test/20200412004000.png#center)
 
