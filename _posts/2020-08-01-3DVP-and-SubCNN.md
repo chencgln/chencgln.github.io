@@ -101,7 +101,7 @@ note：
 RPN 后是检测阶段，检测阶段即使用了上述提取的特征，经过 ROI pooling 得到 ROI 特征，接上了三个分支：类别和子类别的分类，以及 bbox 的回归。
 
 
-得到检测的目标以及目标的对应的 3DVP 类别（subcategory），使用 3DVP 的检测器，预测目标 3D 相关的参数。
+得到检测的目标以及目标的对应的 3DVP 类别（subcategory），即可使用 3DVP 当中的 Occlusion Reasoning 后处理，得到 3D 相关的参数。
 
 
 ## Performance
